@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>kataGOL</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	<div id="controls">
+		<button id="pause"></button>
+		<button id="step">Step</button>
+		<button id="reset">Random</button>
+		<button id="clear">Clear</button>
+	</div>
+	<div id="board"></div>
+	<script src="watchable.js"></script>
+	<script src="gol.js"></script>
+	<script>
+	(function(gol){
+		var $ = function(id){ return document.getElementById(id); },
+			golOpts = {
+				$board: $('board'),
+				rows: 40,
+				cols: 40,
+				speed: 1000/30 /*update rate in ms*/,
+				density: .05 /* percentage of the board that is initially occupied */
+			};
+
+		$('pause').onclick = gol.playPause;
+		$('reset').onclick = gol.reset;
+		$('clear').onclick = gol.clear;
+		$('step').onclick = gol.step;
+
+		gol.started.watch(function(started){
+			$('pause').innerHTML = started ? 'Pause' : 'Play';
+			console.log('updating control');
+		});
+
+		gol.init(golOpts);
+
+
+	})(gol);
+	</script>
+</body>
+</html>

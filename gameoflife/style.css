@@ -1,0 +1,49 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+body{
+	background: #888;
+}
+
+table{
+	margin: 10px auto;
+}
+td{
+	width: 8px;
+	height: 8px;
+	border-radius: 3px;
+	cursor: pointer;
+	line-height: 0;
+}
+td.dead{
+	background: #eee;
+}
+td.dead:hover{
+	background: #666;
+}
+td.alive{
+	background: #404040;
+}
+td.alive:hover{
+	background: #b0b0b0;
+}
+#controls{
+	text-align: center;
+	margin: 10px;
+}
+#controls button{
+	border-radius: 5px;
+	background: #eee;
+	padding: 3px;
+	margin: 0 10px;
+	box-shadow: 0 0 5px #333;
+	min-width: 100px;
+}
+
+#controls button:hover{
+	cursor: pointer;
+	background: #aaa;
+}
