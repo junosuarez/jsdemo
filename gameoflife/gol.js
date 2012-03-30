@@ -1,5 +1,4 @@
-(function(Watchable){
-
+(function (Watchable){
 	var array = new Watchable([[]]),
 		started = new Watchable(false),
 		timeout,
@@ -10,12 +9,12 @@
 		};
 
 	/* rules */
-	rule.conway = function(x, y){
+	rule.conway = function (x, y){
 		var n = rule.fn.countNeighbors(array.get(), x, y);
 		return !(n < 2 || n >3);
 	};
 
-	rule.fn.countNeighbors = function(a, x, y){
+	rule.fn.countNeighbors = function (a, x, y){
 		var rows = [a[y-1], a[y], a[y+1]],
 			n = 0;
 
@@ -29,7 +28,7 @@
 		return n;
 	}
 
-	fn.generate = function(rule){
+	fn.generate = function (rule){
 		var nextGen = [];
 		for(var y = 0; y < opts.rows; y++){
 			var row = [];
@@ -42,7 +41,7 @@
 	};
 
 	/* return a 2d array rows*cols in size of random boolean values */
-	fn.fill = function(rows, cols, density){
+	fn.fill = function (rows, cols, density){
 		var arr = [];
 		for(var y = 0; y < rows; y++){
 			var row = []
@@ -56,7 +55,7 @@
 		return arr;
 	};
 
-	fn.init = function(golOpts){
+	fn.init = function (golOpts){
 		opts = golOpts;
 		array.watch(fn.draw);
 		fn.reset();
@@ -68,7 +67,7 @@
 		});
 	};
 
-	fn.tick = function(once){
+	fn.tick = function (once){
 		var board = fn.generate(rule.conway);
 		array.set(board);
 
@@ -78,7 +77,7 @@
 	};
 
 	/* draw table based on 2-dimensional array of booleans */
-	fn.draw = function(gameArray){
+	fn.draw = function (gameArray){
 		var table = ['<table><tbody>'];
 
 		for(var y = 0; y < gameArray.length; y++){

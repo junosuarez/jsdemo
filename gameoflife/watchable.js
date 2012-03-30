@@ -1,20 +1,21 @@
-Watchable = function(init){
+Watchable = function (init) {
 	var o = init,
 		callbacks = [],
-		get = function(){
+		get = function () {
 			return o;
 		},
-		set = function(val){
-			if(o !== val){
+		set = function (val) {
+			if (o !== val) {
 				o = val;
 				updated();
 			}
 		},
-		watch = function(callback){
+		watch = function (callback) {
 			callbacks.push(callback);
 		},
-		updated = function(){
-			for(var i = 0; i < callbacks.length; i++){
+		updated = function () {
+			var i;
+			for(i = 0; i < callbacks.length; i++){
 				callbacks[i](o);
 			}
 		};
