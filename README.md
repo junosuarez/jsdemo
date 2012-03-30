@@ -2,6 +2,10 @@
 
 This is a repo with examples and small javascript projects. Feel free to look around.
 
+## ./functionalfizzbuzz
+
+A brief kata, using TDD (testing with node / [mocha](http://visionmedia.github.com/mocha/) / should) to implement [Atwood's FizzBuzz](http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html). Using functional paradigm ideas, I define a DSL to describe the rules of fizzbuzz to apply certain `transformation`s as a result of matching certain `predicate`s.
+
 ## ./gameoflife
 
 A quick and dirty javasacript implementation of Conway's Game of Life. I gave myself the constraint not to use any libraries. The display is implemented using the Observer pattern. The public properties of the gol object are instances of the Watchable object, which implementes a get(), set(val), and watch(callback) functions.
