@@ -4,7 +4,7 @@ This is a repo with examples and small javascript projects. Feel free to look ar
 
 ## ./functionalfizzbuzz
 
-A brief kata, using TDD (testing with node / [mocha](http://visionmedia.github.com/mocha/) / should) to implement [Atwood's FizzBuzz](http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html). Using functional paradigm ideas, I define a DSL to describe the rules of fizzbuzz to apply certain `transformation`s as a result of matching certain `predicate`s.
+A brief kata, using TDD (testing with node / [mocha](http://mochajs.org/) / should) to implement [Atwood's FizzBuzz](http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html). Using functional paradigm ideas, I define a DSL to describe the rules of fizzbuzz to apply certain `transformation`s as a result of matching certain `predicate`s.
 
 ## ./gameoflife
 
